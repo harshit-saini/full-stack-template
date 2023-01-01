@@ -1,5 +1,5 @@
 const express = require("express")
-const morgaon = require("morgan")   // for logging the requests
+const morgan = require("morgan")
 const cors = require("cors")
 
 const app = express()
@@ -14,6 +14,7 @@ app.use("/", express.static(path.join(path_to_root_folder, "frontend", "build"))
 console.log(process.env.NODE_ENV)
 if (process.env.NODE_ENV === "development") {
   require("dotenv").config({ path: `${path_to_root_folder}/dev.env` })
+  app.use(morgan("dev"))
 }
 
 

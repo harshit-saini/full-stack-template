@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "backend-dev": "nodemon ./backend/server.js",
-    "dev": "set NODE_ENV=development&& concurrently  \" cd ./frontend/ && npm run dev \" \" nodemon ./backend/server.js \""
+    "dev": "set NODE_ENV=development&& concurrently  \" cd ./frontend/ && npm run dev \" \" nodemon ./backend/server.js \" && \"mongod --dbpath=data\" "
   },
   "author": "",
   "license": "ISC",
@@ -17,7 +17,8 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.2",
-    "mongoose": "^6.8.0",
+    "mongodb": "^4.13.0",
+    "mongoose": "^6.8.2",
     "morgan": "^1.10.0"
   }
 }
